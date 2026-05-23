@@ -72,11 +72,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Pontsho Moselakgmo — Author of Life of a Widow" },
+      {
+        name: "description",
+        content:
+          "The official site of Pontsho Moselakgmo, South African author of Life of a Widow — an intimate exploration of loss, resilience, and rebuilding.",
+      },
+      { name: "author", content: "Pontsho Moselakgmo" },
+      { property: "og:title", content: "Pontsho Moselakgmo — Life of a Widow" },
+      {
+        property: "og:description",
+        content:
+          "An intimate exploration of loss, resilience, and the quiet architecture of rebuilding a life.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
