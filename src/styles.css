@@ -66,6 +66,8 @@
   --paper: oklch(0.972 0.008 85);
   --ink: oklch(0.205 0 0);
   --accent: oklch(0.66 0.105 45);
+  --mauve: oklch(0.55 0.13 320);
+  --blush: oklch(0.92 0.04 350);
 
   --background: var(--paper);
   --foreground: var(--ink);
