@@ -72,18 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pontsho Moselakgmo — Author of Life of a Widow" },
+      { title: "Beauty Beyond Tears — Pontsho M" },
       {
         name: "description",
         content:
-          "The official site of Pontsho Moselakgmo, South African author of Life of a Widow — an intimate exploration of loss, resilience, and rebuilding.",
+          "Beauty Beyond Tears — a ministry of hope, healing & love after pain, founded by author Pontsho Moselakgmo.",
       },
       { name: "author", content: "Pontsho Moselakgmo" },
-      { property: "og:title", content: "Pontsho Moselakgmo — Life of a Widow" },
+      { property: "og:title", content: "Beauty Beyond Tears — Pontsho M" },
       {
         property: "og:description",
         content:
-          "An intimate exploration of loss, resilience, and the quiet architecture of rebuilding a life.",
+          "Finding hope, healing and love after pain. You are seen. You are loved. You are not alone.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
