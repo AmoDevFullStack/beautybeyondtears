@@ -15,14 +15,70 @@ export const Route = createFileRoute("/")({
 });
 
 const gallery = [
-  { src: g3.url, alt: "Beauty Beyond Tears community gathering" },
-  { src: g4.url, alt: "Worship in song" },
-  { src: g1.url, alt: "An embrace of comfort" },
-  { src: g6.url, alt: "Voices lifted together" },
-  { src: g7.url, alt: "Sisters of the ministry" },
-  { src: g5.url, alt: "Fellowship and dance" },
-  { src: g8.url, alt: "Three women at the threshold" },
-  { src: g2.url, alt: "Pontsho M ministering" },
+  {
+    src: g3.url,
+    alt: "Sisters together at a Beauty Beyond Tears gathering",
+    chapter: "Chapter I",
+    title: "Together, we bloom",
+    story:
+      "A circle of sisters around a balloon arch — proof that joy returns, even when we arrive in a wheelchair, even when we arrive in tears.",
+  },
+  {
+    src: g4.url,
+    alt: "A woman singing into a microphone",
+    chapter: "Chapter II",
+    title: "Worship as medicine",
+    story:
+      "When words run out, song carries us. Praise is the first language of healing in this house.",
+  },
+  {
+    src: g1.url,
+    alt: "Two women embracing at a community dinner",
+    chapter: "Chapter III",
+    title: "Held, not handled",
+    story:
+      "Sometimes ministry looks like a long hug over an unfinished plate of food — a witness that you are not invisible.",
+  },
+  {
+    src: g6.url,
+    alt: "Two worship leaders ministering in song",
+    chapter: "Chapter IV",
+    title: "Voices lifted together",
+    story:
+      "Side by side, two voices weave a covering of prayer over every woman in the room.",
+  },
+  {
+    src: g7.url,
+    alt: "Three women smiling, arms around each other",
+    chapter: "Chapter V",
+    title: "Mothers, sisters, friends",
+    story:
+      "The faces of a community that refuses to let anyone walk alone — across generations, across stories.",
+  },
+  {
+    src: g5.url,
+    alt: "Fellowship dancing in the meeting hall",
+    chapter: "Chapter VI",
+    title: "Dance after mourning",
+    story:
+      "Balloons on the floor, music in the air. Even the wheelchair joins the circle. Grief does not get the last word here.",
+  },
+  {
+    src: g8.url,
+    alt: "Three women at the threshold of the hall",
+    chapter: "Chapter VII",
+    title: "At the threshold",
+    story:
+      "Three women stand at the door of the gathering — a quiet picture of what restoration looks like in real life.",
+  },
+  {
+    src: g2.url,
+    alt: "Pontsho M ministering on stage",
+    chapter: "Chapter VIII",
+    title: "The word she carries",
+    story:
+      "Pontsho speaks the message that birthed this ministry: we are not defined by our pain — we are transformed through it.",
+  },
 ];
 
 function Index() {
@@ -66,12 +122,13 @@ function Index() {
             A Ministry of Hope & Healing
           </span>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl leading-[0.88] tracking-tight mb-8">
-            Finding hope, healing &amp;{" "}
-            <span className="italic text-mauve">love</span> after pain.
+            We are beautiful souls{" "}
+            <span className="italic text-mauve">beyond</span> the tears we cry.
           </h1>
           <p className="max-w-lg text-lg leading-relaxed text-ink/70 mb-10">
-            You are seen. You are loved. You are not alone. A safe space for women
+            Finding hope, healing &amp; love after pain. A sanctuary for women
             walking through grief, loss, and the long road back to themselves.
+            You are seen. You are loved. You are not alone.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -103,6 +160,29 @@ function Index() {
         </div>
       </header>
 
+      {/* MARQUEE — modern editorial strip */}
+      <div
+        aria-hidden
+        className="border-y border-ink/10 bg-paper overflow-hidden py-5"
+      >
+        <div className="flex gap-12 whitespace-nowrap animate-[marquee_38s_linear_infinite] font-serif italic text-2xl md:text-3xl text-ink/80">
+          {Array.from({ length: 2 }).map((_, k) => (
+            <div key={k} className="flex gap-12 shrink-0">
+              <span>Beauty in dark places</span>
+              <span className="text-mauve">✦</span>
+              <span>Love beyond broken</span>
+              <span className="text-mauve">✦</span>
+              <span>Prayer beyond the tears</span>
+              <span className="text-mauve">✦</span>
+              <span>Transformed, not defined</span>
+              <span className="text-mauve">✦</span>
+              <span>You are not alone</span>
+              <span className="text-mauve">✦</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* MISSION VERSE */}
       <section
         id="mission"
@@ -115,6 +195,42 @@ function Index() {
         <cite className="not-italic text-[11px] uppercase tracking-[0.4em] font-semibold text-accent">
           — Psalm 147:3
         </cite>
+      </section>
+
+      {/* VISION & MISSION — from the brand brief */}
+      <section className="px-6 md:px-10 pb-24 md:pb-32 grid grid-cols-12 gap-10">
+        <div className="col-span-12 lg:col-span-5">
+          <span className="inline-block px-3 py-1 bg-mauve text-paper text-[10px] uppercase tracking-[0.3em] font-semibold mb-8">
+            Our Vision
+          </span>
+          <h3 className="font-serif text-3xl md:text-5xl leading-[1.05]">
+            We see <span className="italic text-mauve">beauty</span> in dark places.
+            We <span className="italic text-mauve">love</span> beyond broken.
+            We <span className="italic text-mauve">pray</span> beyond the tears.
+          </h3>
+        </div>
+        <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+          <span className="inline-block px-3 py-1 bg-mauve text-paper text-[10px] uppercase tracking-[0.3em] font-semibold mb-8">
+            Our Mission
+          </span>
+          <ul className="divide-y divide-ink/10">
+            {[
+              "We are not defined by our pain — we are transformed through it.",
+              "We build platforms and support systems that turn loneliness into belonging.",
+              "We affirm and show love daily, through speech and through action.",
+              "We respect and respond to every individual who reaches out to us.",
+            ].map((line, i) => (
+              <li key={i} className="flex gap-6 py-5 group">
+                <span className="font-serif italic text-mauve text-xl pt-0.5 w-10 shrink-0">
+                  0{i + 1}
+                </span>
+                <p className="text-lg leading-relaxed text-ink/80 group-hover:text-ink transition-colors">
+                  {line}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* WE OFFER */}
@@ -171,23 +287,58 @@ function Index() {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="px-6 md:px-10 py-20 md:py-24 bg-blush/25">
-        <div className="flex justify-between items-end mb-12 border-b border-ink/10 pb-8">
-          <h2 className="font-serif text-3xl md:text-4xl italic">Moments of Beauty</h2>
-          <span className="text-[10px] uppercase tracking-widest text-ink/40">From the gatherings</span>
+      <section id="gallery" className="px-6 md:px-10 py-20 md:py-28 bg-blush/25">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-14 border-b border-ink/10 pb-8 gap-4">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-mauve font-semibold">
+              The Field Journal
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl italic mt-3">
+              Stories from the gatherings
+            </h2>
+          </div>
+          <span className="text-[10px] uppercase tracking-widest text-ink/40">
+            Eight chapters · One ministry
+          </span>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {gallery.map((img, i) => (
             <figure
               key={img.src}
-              className={`overflow-hidden ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-[4/5]"}`}
+              className={`group flex flex-col ${
+                i === 0 ? "md:col-span-2 lg:col-span-2 md:row-span-2" : ""
+              }`}
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
-              />
+              <div className="overflow-hidden mb-5 bg-ink/5">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${
+                    i === 0 ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]"
+                  }`}
+                />
+              </div>
+              <figcaption className="flex flex-col">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-mauve font-semibold mb-2">
+                  {img.chapter}
+                </span>
+                <h3
+                  className={`font-serif italic leading-tight mb-2 ${
+                    i === 0 ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
+                  }`}
+                >
+                  {img.title}
+                </h3>
+                <p
+                  className={`text-ink/65 leading-relaxed font-light ${
+                    i === 0 ? "text-base md:text-lg max-w-xl" : "text-sm"
+                  }`}
+                >
+                  {img.story}
+                </p>
+              </figcaption>
             </figure>
           ))}
         </div>
@@ -220,6 +371,9 @@ function Index() {
           <div className="col-span-12 lg:col-span-5">
             <img src={logo.url} alt="Beauty Beyond Tears" className="h-16 w-16 object-contain mb-4" />
             <p className="font-serif italic text-xl mb-3">Beauty Beyond Tears</p>
+            <p className="text-sm text-ink/70 leading-relaxed mb-4 max-w-sm italic">
+              We are beautiful souls beyond the tears we cry.
+            </p>
             <p className="text-xs tracking-widest text-ink/50 leading-loose">
               © 2026 PONTSHO M.<br />A MINISTRY OF HOPE & HEALING.<br />SOUTH AFRICA.
             </p>
@@ -228,13 +382,34 @@ function Index() {
             <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Visit</h5>
             <a href="#mission" className="text-sm hover:italic">Mission</a>
             <a href="#offer" className="text-sm hover:italic">We Offer</a>
-            <a href="#gallery" className="text-sm hover:italic">Gallery</a>
+            <a href="#gallery" className="text-sm hover:italic">Field Journal</a>
           </div>
           <div className="col-span-6 lg:col-span-4 flex flex-col gap-3">
             <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Reach Out</h5>
-            <a href="tel:+27684470413" className="text-sm hover:italic">068 447 0413</a>
-            <a href="mailto:hello@beautybeyondtears.co.za" className="text-sm hover:italic">
-              hello@beautybeyondtears.co.za
+            <a href="tel:+27684470413" className="text-sm hover:italic">
+              Phone · 068 447 0413
+            </a>
+            <a
+              href="mailto:Beautybeyondtears1@gmail.com"
+              className="text-sm hover:italic break-all"
+            >
+              Beautybeyondtears1@gmail.com
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm hover:italic"
+            >
+              Facebook · Pontsho mo
+            </a>
+            <a
+              href="https://www.tiktok.com/@pontsho.m64"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm hover:italic"
+            >
+              TikTok · @Pontsho.M64
             </a>
           </div>
         </div>

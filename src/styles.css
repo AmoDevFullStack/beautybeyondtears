@@ -149,3 +149,8 @@
     font-feature-settings: "ss01", "cv11";
   }
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
