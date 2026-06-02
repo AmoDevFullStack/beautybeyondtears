@@ -1,289 +1,250 @@
 import { createFileRoute } from "@tanstack/react-router";
-import bookCover from "@/assets/book-life-of-widow.jpg";
-import articleWindow from "@/assets/article-window.jpg";
-import articleTypewriter from "@/assets/article-typewriter.jpg";
-import articleLibrary from "@/assets/article-library.jpg";
+import logo from "@/assets/bbt/logo.jpeg.asset.json";
+import flyer from "@/assets/bbt/flyer.jpeg.asset.json";
+import g1 from "@/assets/bbt/g1.jpeg.asset.json";
+import g2 from "@/assets/bbt/g2.jpeg.asset.json";
+import g3 from "@/assets/bbt/g3.jpeg.asset.json";
+import g4 from "@/assets/bbt/g4.jpeg.asset.json";
+import g5 from "@/assets/bbt/g5.jpeg.asset.json";
+import g6 from "@/assets/bbt/g6.jpeg.asset.json";
+import g7 from "@/assets/bbt/g7.jpeg.asset.json";
+import g8 from "@/assets/bbt/g8.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const gallery = [
+  { src: g3.url, alt: "Beauty Beyond Tears community gathering" },
+  { src: g4.url, alt: "Worship in song" },
+  { src: g1.url, alt: "An embrace of comfort" },
+  { src: g6.url, alt: "Voices lifted together" },
+  { src: g7.url, alt: "Sisters of the ministry" },
+  { src: g5.url, alt: "Fellowship and dance" },
+  { src: g8.url, alt: "Three women at the threshold" },
+  { src: g2.url, alt: "Pontsho M ministering" },
+];
+
 function Index() {
   return (
-    <div className="bg-paper text-ink font-sans selection:bg-accent/20">
-      <nav className="flex justify-between items-center px-6 md:px-10 py-6 border-b border-ink/5">
-        <a href="#top" className="font-serif italic text-2xl tracking-tight">
-          P. Moselakgmo
+    <div className="bg-paper text-ink font-sans selection:bg-mauve/20">
+      {/* NAV */}
+      <nav className="flex justify-between items-center px-6 md:px-10 py-5 border-b border-ink/10">
+        <a href="#top" className="flex items-center gap-3">
+          <img src={logo.url} alt="Beauty Beyond Tears" className="h-12 w-12 object-contain" />
+          <span className="font-serif text-lg leading-none">
+            Beauty Beyond Tears
+            <span className="block text-[10px] uppercase tracking-[0.3em] text-ink/50 italic mt-1">
+              with Pontsho M
+            </span>
+          </span>
         </a>
-        <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.2em] font-medium">
-          <a href="#books" className="hover:text-accent transition-colors">The Books</a>
-          <a href="#journal" className="hover:text-accent transition-colors">Journal</a>
-          <a href="#about" className="hover:text-accent transition-colors">About</a>
-          <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
+        <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.22em] font-medium">
+          <a href="#mission" className="hover:text-mauve transition-colors">Mission</a>
+          <a href="#offer" className="hover:text-mauve transition-colors">We Offer</a>
+          <a href="#gallery" className="hover:text-mauve transition-colors">Gallery</a>
+          <a href="#contact" className="hover:text-mauve transition-colors">Contact</a>
         </div>
         <a
-          href="#newsletter"
-          className="px-5 py-2 border border-ink text-[11px] uppercase tracking-widest hover:bg-ink hover:text-paper transition-all"
+          href="tel:+27684470413"
+          className="px-4 md:px-5 py-2 bg-mauve text-paper text-[10px] uppercase tracking-widest hover:bg-ink transition-all"
         >
-          Newsletter
+          068 447 0413
         </a>
       </nav>
 
+      {/* HERO — logo is the main visual */}
       <header
         id="top"
-        className="relative px-6 md:px-10 pt-16 md:pt-20 pb-24 md:pb-32 grid grid-cols-12 gap-8 items-end"
+        className="relative px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28 grid grid-cols-12 gap-10 items-center"
       >
-        <div className="col-span-12 lg:col-span-7">
-          <span className="block text-accent uppercase tracking-[0.3em] text-[10px] mb-6 font-semibold italic">
-            New Release
+        {/* soft blush wash */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blush/40 via-paper to-paper" />
+
+        <div className="col-span-12 lg:col-span-7 order-2 lg:order-1">
+          <span className="block text-mauve uppercase tracking-[0.35em] text-[10px] mb-6 font-semibold italic">
+            A Ministry of Hope & Healing
           </span>
-          <h1 className="font-serif text-6xl sm:text-7xl md:text-9xl leading-[0.85] tracking-tighter mb-8">
-            Life of a <br />
-            <span className="italic pl-8 md:pl-12">Widow</span>
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl leading-[0.88] tracking-tight mb-8">
+            Finding hope, healing &amp;{" "}
+            <span className="italic text-mauve">love</span> after pain.
           </h1>
-          <p className="max-w-md text-lg leading-relaxed text-ink/70">
-            An intimate exploration of loss, resilience, and the quiet
-            architecture of rebuilding a life when the foundation shifts
-            unexpectedly.
+          <p className="max-w-lg text-lg leading-relaxed text-ink/70 mb-10">
+            You are seen. You are loved. You are not alone. A safe space for women
+            walking through grief, loss, and the long road back to themselves.
           </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="tel:+27684470413"
+              className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-colors"
+            >
+              Talk to Someone
+            </a>
+            <a
+              href="#offer"
+              className="px-7 py-4 border border-ink/30 text-[11px] uppercase tracking-widest hover:border-ink transition-colors"
+            >
+              What We Offer
+            </a>
+          </div>
         </div>
-        <div className="col-span-12 lg:col-span-5">
-          <img
-            src={bookCover}
-            alt="Cover of Life of a Widow by Pontsho Moselakgmo"
-            width={800}
-            height={1200}
-            className="w-full aspect-[2/3] object-cover shadow-2xl transition-transform duration-500 hover:-rotate-1"
-          />
+
+        <div className="col-span-12 lg:col-span-5 order-1 lg:order-2 flex justify-center">
+          <div className="relative">
+            <div className="absolute -inset-8 bg-blush/30 rounded-full blur-3xl -z-10" />
+            <img
+              src={logo.url}
+              alt="Beauty Beyond Tears — Pontsho M"
+              width={640}
+              height={640}
+              className="w-full max-w-md aspect-square object-contain"
+            />
+          </div>
         </div>
       </header>
 
-      <section id="journal" className="px-6 md:px-10 py-20 md:py-24 bg-ink text-paper">
-        <div className="flex justify-between items-end mb-16 border-b border-paper/10 pb-8">
-          <h2 className="font-serif text-3xl md:text-4xl italic">The Anthology</h2>
-          <a
-            href="#journal"
-            className="text-[10px] uppercase tracking-widest border-b border-paper/30 pb-1 hover:border-paper transition-all"
-          >
-            Read all entries
-          </a>
-        </div>
-
-        <div className="grid grid-cols-12 gap-y-16 lg:gap-12">
-          <article className="col-span-12 lg:col-span-6 group cursor-pointer">
-            <div className="w-full aspect-video mb-6 overflow-hidden">
-              <img
-                src={articleWindow}
-                alt="Woman looking out a rain-streaked window"
-                loading="lazy"
-                width={1200}
-                height={800}
-                className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="flex gap-4 mb-4">
-              <span className="text-[9px] uppercase tracking-widest text-accent">Perspective</span>
-              <span className="text-[9px] uppercase tracking-widest text-paper/40">8 Min Read</span>
-            </div>
-            <h3 className="font-serif text-2xl md:text-3xl mb-4 group-hover:italic transition-all">
-              Finding the words when silence is louder
-            </h3>
-            <p className="text-paper/60 leading-relaxed font-light">
-              Reflections on the first chapter of &lsquo;Life of a Widow&rsquo;
-              and the universal language of grief.
-            </p>
-          </article>
-
-          <div className="col-span-12 lg:col-span-6 flex flex-col gap-12">
-            <article className="grid grid-cols-12 gap-6 group cursor-pointer">
-              <div className="col-span-4">
-                <img
-                  src={articleTypewriter}
-                  alt="Vintage typewriter keys"
-                  loading="lazy"
-                  width={400}
-                  height={400}
-                  className="w-full aspect-square object-cover"
-                />
-              </div>
-              <div className="col-span-8">
-                <span className="text-[9px] uppercase tracking-widest text-paper/40 mb-2 block">Process</span>
-                <h4 className="font-serif text-xl">The Art of Truth-Telling in Fiction</h4>
-                <p className="text-sm text-paper/50 mt-2">
-                  How real-life experiences shape the narrative arc of
-                  Moselakgmo&rsquo;s newest work.
-                </p>
-              </div>
-            </article>
-
-            <article className="grid grid-cols-12 gap-6 group cursor-pointer">
-              <div className="col-span-4">
-                <img
-                  src={articleLibrary}
-                  alt="Sunlit home library"
-                  loading="lazy"
-                  width={400}
-                  height={400}
-                  className="w-full aspect-square object-cover"
-                />
-              </div>
-              <div className="col-span-8">
-                <span className="text-[9px] uppercase tracking-widest text-paper/40 mb-2 block">Events</span>
-                <h4 className="font-serif text-xl">A Seat at the Author&rsquo;s Table</h4>
-                <p className="text-sm text-paper/50 mt-2">
-                  Joining the upcoming virtual book tour and intimate reading
-                  sessions.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="books" className="px-6 md:px-10 py-24 md:py-32">
-        <div className="flex justify-between items-end mb-16 border-b border-ink/10 pb-8">
-          <h2 className="font-serif text-3xl md:text-4xl italic">The Library</h2>
-          <span className="text-[10px] uppercase tracking-widest text-ink/40">Three volumes</span>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          <article className="group">
-            <div className="w-full aspect-[2/3] mb-6 overflow-hidden bg-ink/5">
-              <img
-                src={bookCover}
-                alt="Life of a Widow"
-                loading="lazy"
-                width={600}
-                height={900}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-            </div>
-            <span className="text-[9px] uppercase tracking-widest text-accent">2024 — Novel</span>
-            <h3 className="font-serif text-2xl mt-2 group-hover:italic transition-all">Life of a Widow</h3>
-            <p className="text-sm text-ink/60 mt-2 leading-relaxed">
-              A meditation on the architecture of absence and the slow work of return.
-            </p>
-          </article>
-
-          <article className="group md:mt-12">
-            <div className="w-full aspect-[2/3] mb-6 bg-ink/5 flex items-center justify-center">
-              <span className="font-serif italic text-ink/30 text-xl">The Silent Echo</span>
-            </div>
-            <span className="text-[9px] uppercase tracking-widest text-accent">2021 — Essays</span>
-            <h3 className="font-serif text-2xl mt-2 group-hover:italic transition-all">The Silent Echo</h3>
-            <p className="text-sm text-ink/60 mt-2 leading-relaxed">
-              Essays on inheritance, language, and the rooms our mothers kept.
-            </p>
-          </article>
-
-          <article className="group md:mt-24">
-            <div className="w-full aspect-[2/3] mb-6 bg-ink/5 flex items-center justify-center">
-              <span className="font-serif italic text-ink/30 text-xl">Beyond the Horizon</span>
-            </div>
-            <span className="text-[9px] uppercase tracking-widest text-accent">2018 — Novel</span>
-            <h3 className="font-serif text-2xl mt-2 group-hover:italic transition-all">Beyond the Horizon</h3>
-            <p className="text-sm text-ink/60 mt-2 leading-relaxed">
-              A debut novel charting one woman&rsquo;s journey from Limpopo to Johannesburg.
-            </p>
-          </article>
-        </div>
-      </section>
-
+      {/* MISSION VERSE */}
       <section
-        id="about"
-        className="py-24 md:py-32 flex flex-col items-center text-center px-6 md:px-10"
+        id="mission"
+        className="px-6 md:px-10 py-24 md:py-32 flex flex-col items-center text-center"
       >
-        <div className="w-16 h-px bg-accent mb-12" />
-        <blockquote className="font-serif text-3xl md:text-5xl max-w-4xl leading-tight italic mb-12">
-          &ldquo;Writing is how I navigate the map of the heart. Every book is a
-          compass for a different season of the soul.&rdquo;
+        <div className="w-16 h-px bg-accent mb-10" />
+        <blockquote className="font-serif text-3xl md:text-5xl max-w-4xl leading-tight italic mb-8 text-ink">
+          &ldquo;He heals the brokenhearted and binds up their wounds.&rdquo;
         </blockquote>
         <cite className="not-italic text-[11px] uppercase tracking-[0.4em] font-semibold text-accent">
-          Pontsho Moselakgmo
+          — Psalm 147:3
         </cite>
       </section>
 
-      <section className="px-6 md:px-10 pb-24 md:pb-32 grid grid-cols-12 gap-8 max-w-6xl mx-auto">
-        <div className="col-span-12 lg:col-span-3">
-          <h2 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/50">
-            Recognition
-          </h2>
+      {/* WE OFFER */}
+      <section id="offer" className="bg-ink text-paper px-6 md:px-10 py-20 md:py-28">
+        <div className="flex justify-between items-end mb-16 border-b border-paper/10 pb-8">
+          <h2 className="font-serif text-3xl md:text-4xl italic">We Offer</h2>
+          <span className="text-[10px] uppercase tracking-widest text-paper/40">Four pillars</span>
         </div>
-        <div className="col-span-12 lg:col-span-9 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
-            ["The Sunday Review", "“A voice of luminous restraint.”"],
-            ["Mail & Guardian", "“Moselakgmo writes grief into something holy.”"],
-            ["Literature Today", "“Devastating and necessary.”"],
-          ].map(([outlet, quote]) => (
-            <div
-              key={outlet}
-              className="flex flex-col md:flex-row md:justify-between md:items-baseline border-b border-ink/10 pb-6 group"
-            >
-              <span className="text-xl md:text-2xl font-serif italic">{outlet}</span>
-              <span className="text-sm text-ink/50 group-hover:text-ink transition-colors mt-2 md:mt-0">
-                {quote}
-              </span>
-            </div>
+            ["01", "Confidential Counseling", "A private space to be heard, without judgement, in your own time."],
+            ["02", "Prayer & Spiritual Encouragement", "Standing with you in faith through every season of the soul."],
+            ["03", "A Safe Space to Heal", "Sister circles, retreats, and a community that holds you steady."],
+            ["04", "Faith, Hope & Community", "Belonging — for every woman, every season, every story."],
+          ].map(([n, title, copy]) => (
+            <article key={n} className="group">
+              <span className="block font-serif italic text-mauve text-4xl mb-6">{n}</span>
+              <h3 className="font-serif text-2xl mb-3 group-hover:italic transition-all">{title}</h3>
+              <p className="text-sm text-paper/60 leading-relaxed font-light">{copy}</p>
+            </article>
           ))}
         </div>
       </section>
 
-      <section
-        id="newsletter"
-        className="bg-ink text-paper px-6 md:px-10 py-24 md:py-32"
-      >
-        <div className="max-w-3xl">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-paper/50">
-            Correspondence
+      {/* FOUNDER */}
+      <section className="px-6 md:px-10 py-24 md:py-32 grid grid-cols-12 gap-10 items-center">
+        <div className="col-span-12 lg:col-span-5">
+          <img
+            src={g2.url}
+            alt="Pontsho M ministering on stage"
+            width={900}
+            height={1200}
+            className="w-full aspect-[3/4] object-cover shadow-2xl"
+          />
+        </div>
+        <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+          <span className="block text-mauve uppercase tracking-[0.3em] text-[10px] mb-6 font-semibold italic">
+            The Founder
           </span>
-          <h3 className="font-serif italic text-3xl md:text-5xl mt-6 mb-12 leading-tight">
-            Sign up for the occasional letter on life and letters.
-          </h3>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex border-b border-paper/20 pb-3 max-w-xl"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Email address"
-              className="bg-transparent w-full outline-none text-sm placeholder:text-paper/40"
-            />
-            <button
-              type="submit"
-              className="text-[10px] uppercase tracking-widest font-semibold hover:text-accent transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
+          <h2 className="font-serif text-4xl md:text-6xl leading-[0.95] mb-8">
+            Pontsho <span className="italic">Moselakgmo</span>
+          </h2>
+          <p className="text-lg leading-relaxed text-ink/70 mb-6">
+            Speaker, writer and author of <em>Life of a Widow</em>, Pontsho founded
+            Beauty Beyond Tears as a sanctuary for women navigating grief and the
+            slow, sacred work of becoming whole again.
+          </p>
+          <p className="text-base leading-relaxed text-ink/60">
+            Through ministry, counseling, and the written word, she walks alongside
+            those who feel unseen — reminding them that beauty rises, even through
+            tears.
+          </p>
         </div>
       </section>
 
-      <footer id="contact" className="px-6 md:px-10 py-20 border-t border-ink/5">
-        <div className="grid grid-cols-12 gap-12">
-          <div className="col-span-12 lg:col-span-4">
-            <div className="font-serif italic text-3xl mb-6">P.M.</div>
-            <p className="text-xs tracking-widest text-ink/40 leading-loose">
-              © 2024 PONTSHO MOSELAKGMO.
-              <br />
-              ALL RIGHTS RESERVED.
-              <br />
-              ESTABLISHED IN SOUTH AFRICA.
+      {/* GALLERY */}
+      <section id="gallery" className="px-6 md:px-10 py-20 md:py-24 bg-blush/25">
+        <div className="flex justify-between items-end mb-12 border-b border-ink/10 pb-8">
+          <h2 className="font-serif text-3xl md:text-4xl italic">Moments of Beauty</h2>
+          <span className="text-[10px] uppercase tracking-widest text-ink/40">From the gatherings</span>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5">
+          {gallery.map((img, i) => (
+            <figure
+              key={img.src}
+              className={`overflow-hidden ${i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-[4/5]"}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* CALL */}
+      <section id="contact" className="bg-mauve text-paper px-6 md:px-10 py-24 md:py-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-paper/70">
+            For Support or to Talk to Someone
+          </span>
+          <h3 className="font-serif italic text-4xl md:text-6xl mt-6 mb-10 leading-tight">
+            Come as you are.<br />Leave lighter, loved, and restored.
+          </h3>
+          <a
+            href="tel:+27684470413"
+            className="inline-block font-serif text-4xl md:text-6xl tracking-wide border-b-2 border-paper/40 hover:border-paper pb-2 transition-colors"
+          >
+            068&nbsp;447&nbsp;0413
+          </a>
+          <p className="mt-10 text-sm text-paper/70 tracking-wide">
+            Confidential. Compassionate. Always.
+          </p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="px-6 md:px-10 py-16 border-t border-ink/10">
+        <div className="grid grid-cols-12 gap-10 items-start">
+          <div className="col-span-12 lg:col-span-5">
+            <img src={logo.url} alt="Beauty Beyond Tears" className="h-16 w-16 object-contain mb-4" />
+            <p className="font-serif italic text-xl mb-3">Beauty Beyond Tears</p>
+            <p className="text-xs tracking-widest text-ink/50 leading-loose">
+              © 2026 PONTSHO M.<br />A MINISTRY OF HOPE & HEALING.<br />SOUTH AFRICA.
             </p>
           </div>
-          <div className="col-span-6 lg:col-span-4 flex flex-col gap-4">
-            <h5 className="text-[10px] uppercase tracking-widest font-bold mb-4">Literature</h5>
-            <a href="#books" className="text-sm hover:italic transition-all">Life of a Widow</a>
-            <a href="#books" className="text-sm hover:italic transition-all">The Silent Echo</a>
-            <a href="#books" className="text-sm hover:italic transition-all">Beyond the Horizon</a>
+          <div className="col-span-6 lg:col-span-3 flex flex-col gap-3">
+            <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Visit</h5>
+            <a href="#mission" className="text-sm hover:italic">Mission</a>
+            <a href="#offer" className="text-sm hover:italic">We Offer</a>
+            <a href="#gallery" className="text-sm hover:italic">Gallery</a>
           </div>
-          <div className="col-span-6 lg:col-span-4 flex flex-col gap-4">
-            <h5 className="text-[10px] uppercase tracking-widest font-bold mb-4">Connect</h5>
-            <a href="#" className="text-sm hover:italic transition-all">Instagram</a>
-            <a href="#" className="text-sm hover:italic transition-all">Twitter</a>
-            <a href="mailto:hello@pmoselakgmo.com" className="text-sm hover:italic transition-all">
-              hello@pmoselakgmo.com
+          <div className="col-span-6 lg:col-span-4 flex flex-col gap-3">
+            <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Reach Out</h5>
+            <a href="tel:+27684470413" className="text-sm hover:italic">068 447 0413</a>
+            <a href="mailto:hello@beautybeyondtears.co.za" className="text-sm hover:italic">
+              hello@beautybeyondtears.co.za
             </a>
           </div>
+        </div>
+        <div className="mt-12">
+          <img
+            src={flyer.url}
+            alt="Beauty Beyond Tears flyer"
+            loading="lazy"
+            className="sr-only"
+          />
         </div>
       </footer>
     </div>
