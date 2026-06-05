@@ -163,28 +163,37 @@ function Index() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blush/40 via-paper to-paper" />
 
         <div className="col-span-12 lg:col-span-7 order-2 lg:order-1">
-          <span className="block text-mauve uppercase tracking-[0.35em] text-[10px] mb-6 font-semibold italic">
+          <span className="block text-mauve uppercase tracking-[0.35em] text-[10px] mb-6 font-semibold italic animate-fade-in">
             A Ministry of Hope & Healing
           </span>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl leading-[0.88] tracking-tight mb-8">
+          <h1
+            className="font-serif text-5xl sm:text-6xl md:text-8xl leading-[0.88] tracking-tight mb-8 animate-fade-in"
+            style={{ animationDelay: "120ms", animationFillMode: "backwards" }}
+          >
             We are beautiful souls{" "}
             <span className="italic text-mauve">beyond</span> the tears we cry.
           </h1>
-          <p className="max-w-lg text-lg leading-relaxed text-ink/70 mb-10">
+          <p
+            className="max-w-lg text-lg leading-relaxed text-ink/70 mb-10 animate-fade-in"
+            style={{ animationDelay: "260ms", animationFillMode: "backwards" }}
+          >
             Finding hope, healing &amp; love after pain. A sanctuary for women
             walking through grief, loss, and the long road back to themselves.
             You are seen. You are loved. You are not alone.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div
+            className="flex flex-wrap gap-4 animate-fade-in"
+            style={{ animationDelay: "400ms", animationFillMode: "backwards" }}
+          >
             <a
               href="tel:+27684470413"
-              className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-colors"
+              className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Talk to Someone
             </a>
             <a
               href="#offer"
-              className="px-7 py-4 border border-ink/30 text-[11px] uppercase tracking-widest hover:border-ink transition-colors"
+              className="px-7 py-4 border border-ink/30 text-[11px] uppercase tracking-widest hover:border-ink transition-all hover:-translate-y-0.5"
             >
               What We Offer
             </a>
@@ -192,14 +201,14 @@ function Index() {
         </div>
 
         <div className="col-span-12 lg:col-span-5 order-1 lg:order-2 flex justify-center">
-          <div className="relative">
-            <div className="absolute -inset-8 bg-blush/30 rounded-full blur-3xl -z-10" />
+          <div className="relative animate-scale-in">
+            <div className="absolute -inset-8 bg-blush/30 rounded-full blur-3xl -z-10 animate-pulse" />
             <img
               src={logo.url}
               alt="Beauty Beyond Tears — Pontsho M"
               width={640}
               height={640}
-              className="w-full max-w-md aspect-square object-contain"
+              className="w-full max-w-md aspect-square object-contain hover:scale-105 transition-transform duration-700"
             />
           </div>
         </div>
@@ -233,18 +242,22 @@ function Index() {
         id="mission"
         className="px-6 md:px-10 py-24 md:py-32 flex flex-col items-center text-center"
       >
-        <div className="w-16 h-px bg-accent mb-10" />
-        <blockquote className="font-serif text-3xl md:text-5xl max-w-4xl leading-tight italic mb-8 text-ink">
-          &ldquo;He heals the brokenhearted and binds up their wounds.&rdquo;
-        </blockquote>
-        <cite className="not-italic text-[11px] uppercase tracking-[0.4em] font-semibold text-accent">
-          — Psalm 147:3
-        </cite>
+        <Reveal className="w-16 h-px bg-accent mb-10" />
+        <Reveal delay={120}>
+          <blockquote className="font-serif text-3xl md:text-5xl max-w-4xl leading-tight italic mb-8 text-ink">
+            &ldquo;He heals the brokenhearted and binds up their wounds.&rdquo;
+          </blockquote>
+        </Reveal>
+        <Reveal delay={260}>
+          <cite className="not-italic text-[11px] uppercase tracking-[0.4em] font-semibold text-accent">
+            — Psalm 147:3
+          </cite>
+        </Reveal>
       </section>
 
       {/* VISION & MISSION — from the brand brief */}
       <section className="px-6 md:px-10 pb-24 md:pb-32 grid grid-cols-12 gap-10">
-        <div className="col-span-12 lg:col-span-5">
+        <Reveal className="col-span-12 lg:col-span-5">
           <span className="inline-block px-3 py-1 bg-mauve text-paper text-[10px] uppercase tracking-[0.3em] font-semibold mb-8">
             Our Vision
           </span>
@@ -253,8 +266,8 @@ function Index() {
             We <span className="italic text-mauve">love</span> beyond broken.
             We <span className="italic text-mauve">pray</span> beyond the tears.
           </h3>
-        </div>
-        <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+        </Reveal>
+        <Reveal delay={150} className="col-span-12 lg:col-span-6 lg:col-start-7">
           <span className="inline-block px-3 py-1 bg-mauve text-paper text-[10px] uppercase tracking-[0.3em] font-semibold mb-8">
             Our Mission
           </span>
@@ -265,7 +278,7 @@ function Index() {
               "We affirm and show love daily, through speech and through action.",
               "We respect and respond to every individual who reaches out to us.",
             ].map((line, i) => (
-              <li key={i} className="flex gap-6 py-5 group">
+              <li key={i} className="flex gap-6 py-5 group hover:translate-x-1 transition-transform duration-300">
                 <span className="font-serif italic text-mauve text-xl pt-0.5 w-10 shrink-0">
                   0{i + 1}
                 </span>
@@ -275,43 +288,43 @@ function Index() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       {/* WE OFFER */}
       <section id="offer" className="bg-ink text-paper px-6 md:px-10 py-20 md:py-28">
-        <div className="flex justify-between items-end mb-16 border-b border-paper/10 pb-8">
+        <Reveal className="flex justify-between items-end mb-16 border-b border-paper/10 pb-8">
           <h2 className="font-serif text-3xl md:text-4xl italic">We Offer</h2>
           <span className="text-[10px] uppercase tracking-widest text-paper/40">Four pillars</span>
-        </div>
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
             ["01", "Confidential Counseling", "A private space to be heard, without judgement, in your own time."],
             ["02", "Prayer & Spiritual Encouragement", "Standing with you in faith through every season of the soul."],
             ["03", "A Safe Space to Heal", "Sister circles, retreats, and a community that holds you steady."],
             ["04", "Faith, Hope & Community", "Belonging — for every woman, every season, every story."],
-          ].map(([n, title, copy]) => (
-            <article key={n} className="group">
-              <span className="block font-serif italic text-mauve text-4xl mb-6">{n}</span>
+          ].map(([n, title, copy], idx) => (
+            <Reveal as="article" key={n} delay={idx * 120} className="group">
+              <span className="block font-serif italic text-mauve text-4xl mb-6 group-hover:-translate-y-1 transition-transform duration-300">{n}</span>
               <h3 className="font-serif text-2xl mb-3 group-hover:italic transition-all">{title}</h3>
               <p className="text-sm text-paper/60 leading-relaxed font-light">{copy}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* FOUNDER */}
       <section className="px-6 md:px-10 py-24 md:py-32 grid grid-cols-12 gap-10 items-center">
-        <div className="col-span-12 lg:col-span-5">
+        <Reveal className="col-span-12 lg:col-span-5 overflow-hidden">
           <img
             src={g2.url}
             alt="Pontsho M ministering on stage"
             width={900}
             height={1200}
-            className="w-full aspect-[3/4] object-cover shadow-2xl"
+            className="w-full aspect-[3/4] object-cover shadow-2xl hover:scale-105 transition-transform duration-[1200ms]"
           />
-        </div>
-        <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+        </Reveal>
+        <Reveal delay={180} className="col-span-12 lg:col-span-6 lg:col-start-7">
           <span className="block text-mauve uppercase tracking-[0.3em] text-[10px] mb-6 font-semibold italic">
             The Founder
           </span>
@@ -328,12 +341,12 @@ function Index() {
             those who feel unseen — reminding them that beauty rises, even through
             tears.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* GALLERY */}
       <section id="gallery" className="px-6 md:px-10 py-20 md:py-28 bg-blush/25">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-14 border-b border-ink/10 pb-8 gap-4">
+        <Reveal className="flex flex-col md:flex-row md:justify-between md:items-end mb-14 border-b border-ink/10 pb-8 gap-4">
           <div>
             <span className="text-[10px] uppercase tracking-[0.3em] text-mauve font-semibold">
               The Field Journal
@@ -345,12 +358,14 @@ function Index() {
           <span className="text-[10px] uppercase tracking-widest text-ink/40">
             Eight chapters · One ministry
           </span>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {gallery.map((img, i) => (
-            <figure
+            <Reveal
+              as="figure"
               key={img.src}
+              delay={(i % 3) * 120}
               className={`group flex flex-col ${
                 i === 0 ? "md:col-span-2 lg:col-span-2 md:row-span-2" : ""
               }`}
@@ -384,14 +399,14 @@ function Index() {
                   {img.story}
                 </p>
               </figcaption>
-            </figure>
+            </Reveal>
           ))}
         </div>
       </section>
 
       {/* CALL */}
       <section id="contact" className="bg-mauve text-paper px-6 md:px-10 py-24 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-4xl mx-auto text-center">
           <span className="text-[10px] uppercase tracking-[0.4em] text-paper/70">
             For Support or to Talk to Someone
           </span>
@@ -400,14 +415,14 @@ function Index() {
           </h3>
           <a
             href="tel:+27684470413"
-            className="inline-block font-serif text-4xl md:text-6xl tracking-wide border-b-2 border-paper/40 hover:border-paper pb-2 transition-colors"
+            className="inline-block font-serif text-4xl md:text-6xl tracking-wide border-b-2 border-paper/40 hover:border-paper pb-2 transition-all hover:scale-105"
           >
             068&nbsp;447&nbsp;0413
           </a>
           <p className="mt-10 text-sm text-paper/70 tracking-wide">
             Confidential. Compassionate. Always.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* FOOTER */}
