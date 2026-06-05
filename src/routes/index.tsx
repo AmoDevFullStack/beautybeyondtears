@@ -21,7 +21,7 @@ function Reveal({
   className = "",
   as: Tag = "div",
 }: {
-  children: ReactNode;
+  children?: ReactNode;
   delay?: number;
   className?: string;
   as?: "div" | "section" | "article" | "li" | "figure";
