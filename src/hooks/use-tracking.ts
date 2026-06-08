@@ -28,7 +28,7 @@ export async function trackEvent(
       event_type: eventType,
       event_name: eventName,
       path: window.location.pathname,
-      metadata,
+      metadata: metadata as never,
       user_agent: navigator.userAgent,
     });
   } catch (err) {
