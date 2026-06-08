@@ -223,6 +223,7 @@ function Index() {
           >
             <a
               href="tel:+27684470413"
+              onClick={() => trackEvent("click", "hero_talk_to_someone")}
               className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Talk to Someone
@@ -451,6 +452,7 @@ function Index() {
           </h3>
           <a
             href="tel:+27684470413"
+            onClick={() => trackEvent("click", "contact_phone")}
             className="inline-block font-serif text-4xl md:text-6xl tracking-wide border-b-2 border-paper/40 hover:border-paper pb-2 transition-all hover:scale-105"
           >
             068&nbsp;447&nbsp;0413
