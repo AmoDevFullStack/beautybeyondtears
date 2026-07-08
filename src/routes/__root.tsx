@@ -83,11 +83,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Finding hope, healing and love after pain. You are seen. You are loved. You are not alone.",
+          "Beauty Beyond Tears — a ministry of hope, healing & love after pain, founded by author Pontsho Moselakgomo.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Beauty Beyond Tears — Pontsho M" },
+      { name: "twitter:description", content: "Beauty Beyond Tears — a ministry of hope, healing & love after pain, founded by author Pontsho Moselakgomo." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/aeba2e76-a885-45e0-8029-f303eb95f7e0/id-preview-52759df3--d9b12689-4912-4c06-87ba-ca76095ac9e8.lovable.app-1783501768819.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/aeba2e76-a885-45e0-8029-f303eb95f7e0/id-preview-52759df3--d9b12689-4912-4c06-87ba-ca76095ac9e8.lovable.app-1783501768819.png" },
     ],
     links: [
       {
