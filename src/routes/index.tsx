@@ -259,8 +259,9 @@ function Index() {
       {/* MISSION VERSE */}
       <section
         id="mission"
-        className="px-6 md:px-10 py-24 md:py-32 flex flex-col items-center text-center"
+        className="relative px-6 md:px-10 py-24 md:py-32 flex flex-col items-center text-center overflow-hidden"
       >
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mauve/40 to-transparent" />
         <Reveal className="w-16 h-px bg-accent mb-10" />
         <Reveal delay={120}>
           <blockquote className="font-serif text-3xl md:text-5xl max-w-4xl leading-tight italic mb-8 text-ink">
@@ -394,7 +395,7 @@ function Index() {
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${
+                  className={`w-full object-cover transition-all duration-[1200ms] ease-out group-hover:scale-[1.06] group-hover:brightness-105 ${
                     i === 0 ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/5]"
                   }`}
                 />
