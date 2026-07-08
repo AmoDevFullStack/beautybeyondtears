@@ -152,3 +152,75 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(0.6deg); }
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.6;  transform: scale(1.08); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blur-in {
+  from { opacity: 0; filter: blur(14px); transform: translateY(12px); }
+  to   { opacity: 1; filter: blur(0);    transform: translateY(0); }
+}
+
+.animate-floaty      { animation: floaty 7s ease-in-out infinite; }
+.animate-slow-spin   { animation: slow-spin 42s linear infinite; }
+.animate-soft-pulse  { animation: soft-pulse 6s ease-in-out infinite; }
+.animate-rise        { animation: rise 900ms cubic-bezier(.2,.7,.2,1) both; }
+.animate-blur-in     { animation: blur-in 1100ms cubic-bezier(.2,.7,.2,1) both; }
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    oklch(0.55 0.13 320) 0%,
+    oklch(0.72 0.14 350) 40%,
+    oklch(0.66 0.105 45) 60%,
+    oklch(0.55 0.13 320) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+/* Subtle paper grain overlay */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: radial-gradient(oklch(0.205 0 0) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floaty,
+  .animate-slow-spin,
+  .animate-soft-pulse,
+  .text-shimmer {
+    animation: none !important;
+  }
+}
