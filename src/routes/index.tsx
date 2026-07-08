@@ -1,7 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { usePageView, trackEvent } from "@/hooks/use-tracking";
 import logo from "@/assets/bbt/logo.jpeg.asset.json";
 import flyer from "@/assets/bbt/flyer.jpeg.asset.json";
 import g1 from "@/assets/bbt/g1.jpeg.asset.json";
@@ -129,19 +127,6 @@ const gallery = [
 ];
 
 function Index() {
-  usePageView("home");
-  const [userEmail, setUserEmail] = useState<string | null>(null);
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setUserEmail(data.session?.user?.email ?? null));
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      setUserEmail(session?.user?.email ?? null);
-    });
-    return () => sub.subscription.unsubscribe();
-  }, []);
-  async function handleSignOut() {
-    await trackEvent("auth", "logout");
-    await supabase.auth.signOut();
-  }
   return (
     <div className="bg-paper text-ink font-sans selection:bg-mauve/20">
       {/* NAV */}
@@ -161,33 +146,12 @@ function Index() {
           <a href="#gallery" className="hover:text-mauve transition-colors">Gallery</a>
           <a href="#contact" className="hover:text-mauve transition-colors">Contact</a>
         </div>
-        <div className="flex items-center gap-3">
-          {userEmail ? (
-            <>
-              <Link
-                to="/admin"
-                onClick={() => trackEvent("click", "nav_admin")}
-                className="hidden sm:inline text-[10px] uppercase tracking-widest text-ink/60 hover:text-mauve"
-              >
-                Dashboard
-              </Link>
-              <button
-                onClick={handleSignOut}
-                className="px-4 py-2 border border-ink/30 text-[10px] uppercase tracking-widest hover:border-ink"
-              >
-                Sign out
-              </button>
-            </>
-          ) : (
-            <Link
-              to="/auth"
-              onClick={() => trackEvent("click", "nav_signin")}
-              className="px-4 md:px-5 py-2 bg-mauve text-paper text-[10px] uppercase tracking-widest hover:bg-ink transition-all"
-            >
-              Sign up / In
-            </Link>
-          )}
-        </div>
+        <a
+          href="tel:+27684470413"
+          className="px-4 md:px-5 py-2 bg-mauve text-paper text-[10px] uppercase tracking-widest hover:bg-ink transition-all"
+        >
+          Talk to Us
+        </a>
       </nav>
 
       {/* HERO — logo is the main visual */}
@@ -223,7 +187,6 @@ function Index() {
           >
             <a
               href="tel:+27684470413"
-              onClick={() => trackEvent("click", "hero_talk_to_someone")}
               className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Talk to Someone
@@ -366,7 +329,7 @@ function Index() {
             The Founder
           </span>
           <h2 className="font-serif text-4xl md:text-6xl leading-[0.95] mb-8">
-            Pontsho <span className="italic">Moselakgmo</span>
+            Pontsho <span className="italic">Moselakgomo</span>
           </h2>
           <p className="text-lg leading-relaxed text-ink/70 mb-6">
             Speaker, writer and author of <em>Life of a Widow</em>, Pontsho founded
@@ -452,7 +415,6 @@ function Index() {
           </h3>
           <a
             href="tel:+27684470413"
-            onClick={() => trackEvent("click", "contact_phone")}
             className="inline-block font-serif text-4xl md:text-6xl tracking-wide border-b-2 border-paper/40 hover:border-paper pb-2 transition-all hover:scale-105"
           >
             068&nbsp;447&nbsp;0413
