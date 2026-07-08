@@ -76,9 +76,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Beauty Beyond Tears — a ministry of hope, healing & love after pain, founded by author Pontsho Moselakgmo.",
+          "Beauty Beyond Tears — a ministry of hope, healing & love after pain, founded by author Pontsho Moselakgomo.",
       },
-      { name: "author", content: "Pontsho Moselakgmo" },
+      { name: "author", content: "Pontsho Moselakgomo" },
       { property: "og:title", content: "Beauty Beyond Tears — Pontsho M" },
       {
         property: "og:description",
