@@ -157,24 +157,31 @@ function Index() {
       {/* HERO — logo is the main visual */}
       <header
         id="top"
-        className="relative px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28 grid grid-cols-12 gap-10 items-center"
+        className="relative overflow-hidden px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28 grid grid-cols-12 gap-10 items-center grain"
       >
         {/* soft blush wash */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blush/40 via-paper to-paper" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blush/50 via-paper to-paper" />
+        {/* floating decorative orbs */}
+        <div className="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-mauve/15 blur-3xl -z-10 animate-soft-pulse" />
+        <div
+          className="pointer-events-none absolute -bottom-32 -right-20 w-[28rem] h-[28rem] rounded-full bg-accent/15 blur-3xl -z-10 animate-soft-pulse"
+          style={{ animationDelay: "2s" }}
+        />
 
         <div className="col-span-12 lg:col-span-7 order-2 lg:order-1">
-          <span className="block text-mauve uppercase tracking-[0.35em] text-[10px] mb-6 font-semibold italic animate-fade-in">
-            A Ministry of Hope & Healing
+          <span className="inline-flex items-center gap-3 text-mauve uppercase tracking-[0.35em] text-[10px] mb-6 font-semibold italic animate-fade-in">
+            <span className="inline-block w-8 h-px bg-mauve" />
+            A Ministry of Hope &amp; Healing
           </span>
           <h1
-            className="font-serif text-5xl sm:text-6xl md:text-8xl leading-[0.88] tracking-tight mb-8 animate-fade-in"
+            className="font-serif text-5xl sm:text-6xl md:text-8xl leading-[0.88] tracking-tight mb-8 animate-blur-in"
             style={{ animationDelay: "120ms", animationFillMode: "backwards" }}
           >
             We are beautiful souls{" "}
-            <span className="italic text-mauve">beyond</span> the tears we cry.
+            <span className="italic text-shimmer">beyond</span> the tears we cry.
           </h1>
           <p
-            className="max-w-lg text-lg leading-relaxed text-ink/70 mb-10 animate-fade-in"
+            className="max-w-lg text-lg leading-relaxed text-ink/70 mb-10 animate-rise"
             style={{ animationDelay: "260ms", animationFillMode: "backwards" }}
           >
             Finding hope, healing &amp; love after pain. A sanctuary for women
@@ -182,34 +189,46 @@ function Index() {
             You are seen. You are loved. You are not alone.
           </p>
           <div
-            className="flex flex-wrap gap-4 animate-fade-in"
+            className="flex flex-wrap gap-4 animate-rise"
             style={{ animationDelay: "400ms", animationFillMode: "backwards" }}
           >
             <a
               href="https://wa.me/27684470413" target="_blank" rel="noreferrer"
-              className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="group relative overflow-hidden px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
-              Talk to Someone
+              <span className="relative z-10">Talk to Someone</span>
+              <span className="absolute inset-0 bg-mauve translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </a>
             <a
               href="#offer"
-              className="px-7 py-4 border border-ink/30 text-[11px] uppercase tracking-widest hover:border-ink transition-all hover:-translate-y-0.5"
+              className="group px-7 py-4 border border-ink/30 text-[11px] uppercase tracking-widest hover:border-ink transition-all hover:-translate-y-0.5"
             >
               What We Offer
+              <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
         </div>
 
         <div className="col-span-12 lg:col-span-5 order-1 lg:order-2 flex justify-center">
-          <div className="relative animate-scale-in">
-            <div className="absolute -inset-8 bg-blush/30 rounded-full blur-3xl -z-10 animate-pulse" />
-            <img
-              src={logo.url}
-              alt="Beauty Beyond Tears — Pontsho M"
-              width={640}
-              height={640}
-              className="w-full max-w-md aspect-square object-contain hover:scale-105 transition-transform duration-700"
+          <div className="relative animate-scale-in group">
+            {/* glow */}
+            <div className="absolute -inset-10 bg-blush/40 rounded-full blur-3xl -z-10 animate-soft-pulse" />
+            {/* rotating dashed ring */}
+            <div className="pointer-events-none absolute -inset-6 rounded-full border border-dashed border-mauve/30 animate-slow-spin -z-10" />
+            {/* inner ring, opposite spin */}
+            <div
+              className="pointer-events-none absolute inset-4 rounded-full border border-accent/20 animate-slow-spin -z-10"
+              style={{ animationDirection: "reverse", animationDuration: "60s" }}
             />
+            <div className="animate-floaty">
+              <img
+                src={logo.url}
+                alt="Beauty Beyond Tears — Pontsho Moselakgomo"
+                width={640}
+                height={640}
+                className="w-full max-w-md aspect-square object-contain transition-transform duration-700 group-hover:scale-[1.04]"
+              />
+            </div>
           </div>
         </div>
       </header>
