@@ -147,7 +147,7 @@ function Index() {
           <a href="#contact" className="hover:text-mauve transition-colors">Contact</a>
         </div>
         <a
-          href="tel:+27684470413"
+          href="https://wa.me/27684470413" target="_blank" rel="noreferrer"
           className="px-4 md:px-5 py-2 bg-mauve text-paper text-[10px] uppercase tracking-widest hover:bg-ink transition-all"
         >
           Talk to Us
@@ -186,7 +186,7 @@ function Index() {
             style={{ animationDelay: "400ms", animationFillMode: "backwards" }}
           >
             <a
-              href="tel:+27684470413"
+              href="https://wa.me/27684470413" target="_blank" rel="noreferrer"
               className="px-7 py-4 bg-ink text-paper text-[11px] uppercase tracking-widest hover:bg-mauve transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
               Talk to Someone
@@ -414,7 +414,7 @@ function Index() {
             Come as you are.<br />Leave lighter, loved, and restored.
           </h3>
           <a
-            href="tel:+27684470413"
+            href="https://wa.me/27684470413" target="_blank" rel="noreferrer"
             className="inline-block font-serif text-4xl md:text-6xl tracking-wide border-b-2 border-paper/40 hover:border-paper pb-2 transition-all hover:scale-105"
           >
             068&nbsp;447&nbsp;0413
@@ -446,7 +446,7 @@ function Index() {
           </div>
           <div className="col-span-6 lg:col-span-4 flex flex-col gap-3">
             <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Reach Out</h5>
-            <a href="tel:+27684470413" className="text-sm hover:italic">
+            <a href="https://wa.me/27684470413" target="_blank" rel="noreferrer" className="text-sm hover:italic">
               Phone · 068 447 0413
             </a>
             <a
