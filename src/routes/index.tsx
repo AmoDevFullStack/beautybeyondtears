@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { WelcomeVerse } from "@/components/WelcomeVerse";
 import logo from "@/assets/bbt/logo.jpeg.asset.json";
 import flyer from "@/assets/bbt/flyer.jpeg.asset.json";
 import g1 from "@/assets/bbt/g1.jpeg.asset.json";
@@ -129,6 +130,7 @@ const gallery = [
 function Index() {
   return (
     <div className="bg-paper text-ink font-sans selection:bg-mauve/20">
+      <WelcomeVerse />
       {/* NAV */}
       <nav className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 md:px-10 py-4 md:py-5 border-b border-ink/10 bg-paper">
         <a href="#top" className="flex min-w-0 items-center gap-3">
