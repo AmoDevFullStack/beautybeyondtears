@@ -130,10 +130,14 @@ function Index() {
   return (
     <div className="bg-paper text-ink font-sans selection:bg-mauve/20">
       {/* NAV */}
-      <nav className="flex justify-between items-center px-6 md:px-10 py-5 border-b border-ink/10">
-        <a href="#top" className="flex items-center gap-3">
-          <img src={logo.url} alt="Beauty Beyond Tears" className="h-12 w-12 object-contain" />
-          <span className="font-serif text-lg leading-none">
+      <nav className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 md:px-10 py-4 md:py-5 border-b border-ink/10 bg-paper">
+        <a href="#top" className="flex min-w-0 items-center gap-3">
+          <img
+            src={logo.url}
+            alt="Beauty Beyond Tears"
+            className="h-10 w-10 md:h-12 md:w-12 shrink-0 object-contain"
+          />
+          <span className="font-serif text-base md:text-lg leading-none truncate text-ink">
             Beauty Beyond Tears
             <span className="block text-[10px] uppercase tracking-[0.3em] text-ink/50 italic mt-1">
               with Pontsho M
@@ -148,7 +152,7 @@ function Index() {
         </div>
         <a
           href="https://wa.me/27684470413" target="_blank" rel="noreferrer"
-          className="px-4 md:px-5 py-2 bg-mauve text-paper text-[10px] uppercase tracking-widest hover:bg-ink transition-all"
+          className="shrink-0 whitespace-nowrap px-3 md:px-5 py-2 md:py-2.5 bg-mauve text-paper text-[10px] uppercase tracking-widest font-semibold shadow-sm hover:bg-ink transition-all"
         >
           Talk to Us
         </a>
