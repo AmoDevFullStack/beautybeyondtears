@@ -72,6 +72,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "color-scheme", content: "light" },
+      { name: "theme-color", content: "#f6f1e7" },
+      { name: "supported-color-schemes", content: "light" },
       { title: "Beauty Beyond Tears — Pontsho M" },
       {
         name: "description",
