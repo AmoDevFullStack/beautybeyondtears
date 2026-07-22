@@ -21,15 +21,13 @@ cd beautybeyondtears
 
 ## Usage
 
-[Add usage instructions here]
+#To be changed
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues.
 
 ## License
-
-[Specify your license here]
 
 ## Author
 
