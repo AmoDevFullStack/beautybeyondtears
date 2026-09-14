@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { WelcomeVerse } from "@/components/WelcomeVerse";
-import logo from "@/assets/bbt/logo.jpeg.asset.json";
-import flyer from "@/assets/bbt/flyer.jpeg.asset.json";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import g1 from "@/assets/bbt/g1.jpeg.asset.json";
 import g2 from "@/assets/bbt/g2.jpeg.asset.json";
 import g3 from "@/assets/bbt/g3.jpeg.asset.json";
