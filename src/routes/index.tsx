@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { WelcomeVerse } from "@/components/WelcomeVerse";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import logo from "@/assets/bbt/logo.jpeg.asset.json";
-import flyer from "@/assets/bbt/flyer.jpeg.asset.json";
 import g1 from "@/assets/bbt/g1.jpeg.asset.json";
 import g2 from "@/assets/bbt/g2.jpeg.asset.json";
 import g3 from "@/assets/bbt/g3.jpeg.asset.json";
@@ -131,34 +132,7 @@ function Index() {
   return (
     <div className="bg-paper text-ink font-sans selection:bg-mauve/20">
       <WelcomeVerse />
-      {/* NAV */}
-      <nav className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 md:px-10 py-4 md:py-5 border-b border-ink/10 bg-paper">
-        <a href="#top" className="flex min-w-0 items-center gap-3">
-          <img
-            src={logo.url}
-            alt="Beauty Beyond Tears"
-            className="h-10 w-10 md:h-12 md:w-12 shrink-0 object-contain"
-          />
-          <span className="font-serif text-base md:text-lg leading-none truncate text-ink">
-            Beauty Beyond Tears
-            <span className="block text-[10px] uppercase tracking-[0.3em] text-ink/50 italic mt-1">
-              with Pontsho M
-            </span>
-          </span>
-        </a>
-        <div className="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.22em] font-medium">
-          <a href="#mission" className="hover:text-mauve transition-colors">Mission</a>
-          <a href="#offer" className="hover:text-mauve transition-colors">We Offer</a>
-          <a href="#gallery" className="hover:text-mauve transition-colors">Gallery</a>
-          <a href="#contact" className="hover:text-mauve transition-colors">Contact</a>
-        </div>
-        <a
-          href="https://wa.me/27684470413" target="_blank" rel="noreferrer"
-          className="shrink-0 whitespace-nowrap px-3 md:px-5 py-2 md:py-2.5 bg-mauve text-paper text-[10px] uppercase tracking-widest font-semibold shadow-sm hover:bg-ink transition-all"
-        >
-          Talk to Us
-        </a>
-      </nav>
+      <Header />
 
       {/* HERO — logo is the main visual */}
       <header
@@ -451,63 +425,7 @@ function Index() {
         </Reveal>
       </section>
 
-      {/* FOOTER */}
-      <footer className="px-6 md:px-10 py-16 border-t border-ink/10">
-        <div className="grid grid-cols-12 gap-10 items-start">
-          <div className="col-span-12 lg:col-span-5">
-            <img src={logo.url} alt="Beauty Beyond Tears" className="h-16 w-16 object-contain mb-4" />
-            <p className="font-serif italic text-xl mb-3">Beauty Beyond Tears</p>
-            <p className="text-sm text-ink/70 leading-relaxed mb-4 max-w-sm italic">
-              We are beautiful souls beyond the tears we cry.
-            </p>
-            <p className="text-xs tracking-widest text-ink/50 leading-loose">
-              © 2026 PONTSHO M.<br />A MINISTRY OF HOPE & HEALING.<br />SOUTH AFRICA.
-            </p>
-          </div>
-          <div className="col-span-6 lg:col-span-3 flex flex-col gap-3">
-            <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Visit</h5>
-            <a href="#mission" className="text-sm hover:italic">Mission</a>
-            <a href="#offer" className="text-sm hover:italic">We Offer</a>
-            <a href="#gallery" className="text-sm hover:italic">Field Journal</a>
-          </div>
-          <div className="col-span-6 lg:col-span-4 flex flex-col gap-3">
-            <h5 className="text-[10px] uppercase tracking-widest font-bold mb-3">Reach Out</h5>
-            <a href="https://wa.me/27684470413" target="_blank" rel="noreferrer" className="text-sm hover:italic">
-              Phone · 068 447 0413
-            </a>
-            <a
-              href="mailto:Beautybeyondtears1@gmail.com"
-              className="text-sm hover:italic break-all"
-            >
-              Beautybeyondtears1@gmail.com
-            </a>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm hover:italic"
-            >
-              Facebook · Pontsho mo
-            </a>
-            <a
-              href="https://www.tiktok.com/@pontsho.m64"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm hover:italic"
-            >
-              TikTok · @Pontsho.M64
-            </a>
-          </div>
-        </div>
-        <div className="mt-12">
-          <img
-            src={flyer.url}
-            alt="Beauty Beyond Tears flyer"
-            loading="lazy"
-            className="sr-only"
-          />
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
